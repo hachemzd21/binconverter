@@ -1,0 +1,76 @@
+<form>
+  <label for="binary-input">Enter a binary number:</label>
+  <input type="text" id="binary-input">
+  <button type="button" id="convert-button">Convert</button>
+</form>
+<div id="result"></div>
+<div id="schema-container">
+  <img id="schema-img" src="path/to/image.jpg" alt="Schema of Binary to Decimal conversion">
+  <p id="schema-caption">Schema of Binary to Decimal conversion</p>
+</div>
+
+<style>body {
+  background-color: #F5F5F5;
+  font-family: Arial, sans-serif;
+}
+form {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+input[type="text"],
+button {
+  font-size: 1.2em;
+  padding: 0.5em;
+  margin: 0.5em;
+  border-radius: 5px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+input[type="text"] {
+  width: 80%;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #3e8e41;
+}
+#result {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
+
+#schema-container {
+  position: relative;
+}
+#schema-img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#schema-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8em;
+}
+
+</style>
+<script>const convertButton = document.getElementById("convert-button");
+convertButton.addEventListener("click", function() {
+    const binaryInput = document.getElementById("binary-input").value;
+    const decimal = parseInt(binaryInput, 2);
+    const result = document.getElementById("result");
+    result.innerHTML = decimal;
+});
+</script>
